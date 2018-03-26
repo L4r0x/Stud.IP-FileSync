@@ -43,7 +43,7 @@ public final class RestApi {
 		}
 
 		final JacksonRequest<Courses> request = new JacksonRequest<Courses>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/courses/semester/" + semesterId, Courses.class);
+				StudIPApiProvider.BASE_URL + "/courses/semester/" + semesterId, Courses.class);
 
 		switch (request.getCode()) {
 		case 200:
@@ -72,7 +72,7 @@ public final class RestApi {
 		}
 
 		final JacksonRequest<Documents> request = new JacksonRequest<Documents>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/documents/" + courseId + "/new/" + timestamp, Documents.class);
+				StudIPApiProvider.BASE_URL + "/documents/" + courseId + "/new/" + timestamp, Documents.class);
 
 		switch (request.getCode()) {
 		case 200:
@@ -107,7 +107,7 @@ public final class RestApi {
 		}
 
 		final JacksonRequest<DocumentFolders> request = new JacksonRequest<DocumentFolders>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/documents/" + rangeId + "/folder" + (folderId == null ? "" : "/" + folderId), DocumentFolders.class);
+				StudIPApiProvider.BASE_URL + "/documents/" + rangeId + "/folder" + (folderId == null ? "" : "/" + folderId), DocumentFolders.class);
 
 		switch (request.getCode()) {
 		case 200:
@@ -140,7 +140,7 @@ public final class RestApi {
 		}
 
 		final JacksonRequest<Object> request = new JacksonRequest<Object>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/documents/" + documentId + "/download", Object.class);
+				StudIPApiProvider.BASE_URL + "/documents/" + documentId + "/download", Object.class);
 
 		switch (request.getCode()) {
 		case 200:
@@ -165,7 +165,7 @@ public final class RestApi {
 	 */
 	public static Semesters getAllSemesters() throws UnauthorizedException, IOException {
 		final JacksonRequest<Semesters> request = new JacksonRequest<Semesters>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/courses/semester", Semesters.class);
+				StudIPApiProvider.BASE_URL + "/courses/semester", Semesters.class);
 
 		switch (request.getCode()) {
 		case 200:
@@ -191,7 +191,7 @@ public final class RestApi {
 		}
 
 		final JacksonRequest<User> request = new JacksonRequest<User>(Verb.GET,
-				StudIPApiProvider.BASE_URL + "/api/user" + (userId == null ? "" : "/" + userId), User.class);
+				StudIPApiProvider.BASE_URL + "/user" + (userId == null ? "" : "/" + userId), User.class);
 
 		switch (request.getCode()) {
 		case 200:

@@ -13,12 +13,17 @@ public final class StudIPApiProvider extends DefaultApi10a
 	/**
 	 * Studip rest api plugin base url.
 	 */
-	public static final String BASE_URL = "https://studip.uni-hannover.de/plugins.php/restipplugin";
+	public static final String BASE_URL = "https://studip.uni-hannover.de/api.php";
 
 	/**
 	 * OAuth service callback address.
 	 */
 	public static final String API_CALLBACK = "https://studip.uni-hannover.de/dispatch.php/start";
+
+	/**
+	 * OAuth authentication base url.
+	 */
+	public static final String OAUTH_BASE_URL = "https://studip.uni-hannover.de/dispatch.php/api/oauth";
 
 	/**
 	 * Logout address.
@@ -53,18 +58,18 @@ public final class StudIPApiProvider extends DefaultApi10a
 	@Override
 	public String getAccessTokenEndpoint()
 	{
-		return BASE_URL + "/oauth/access_token";
+		return OAUTH_BASE_URL + "/access_token";
 	}
 
 	@Override
 	public String getRequestTokenEndpoint()
 	{
-		return BASE_URL + "/oauth/request_token";
+		return OAUTH_BASE_URL + "/request_token";
 	}
 
 	@Override
 	public String getAuthorizationUrl(final Token requestToken)
 	{
-		return BASE_URL + "/oauth/authorize?oauth_token=" + requestToken.getToken();
+		return OAUTH_BASE_URL + "/authorize?oauth_token=" + requestToken.getToken();
 	}
 }
